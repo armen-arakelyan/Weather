@@ -30,7 +30,6 @@ const Weather=()=>{
                     <div className="weather_form_city">
                     <h2>{city}</h2>
                 <p onClick={()=>{
-                    console.log(v.description.search("Rain"))
                     setRotateDeg(!rotateDeg)
                 }} style={{cursor:"pointer",transform:`rotate(${rotateDeg?"270deg":"90deg"})`,transition:"0.25s"}}>&#10142;</p>
                     </div>
