@@ -23,15 +23,16 @@ const Weather=()=>{
     },[weather_data.length!==0,city])
     return(
         <div className="weather">
-            {weather_data.map((v,i)=><div style={{backgroundImage:v.description==="Rain"?`url('https://i.pinimg.com/originals/41/90/be/4190be46508500f52ec133f793ac3b5d.gif')`:`url('https://thumbs.gfycat.com/IckyAmbitiousBasenji-max-1mb.gif')`}} key={i} className="weather_content">
+            {weather_data.map((v,i)=><div style={{backgroundImage:v.description.toLowerCase().search("rain")!==-1?`url('https://i.pinimg.com/originals/41/90/be/4190be46508500f52ec133f793ac3b5d.gif')`:`url('https://thumbs.gfycat.com/IckyAmbitiousBasenji-max-1mb.gif')`}} key={i} className="weather_content">
                 <div className="weather_today">
                 <span>
                 <form onSubmit={handleSubmit(changeCity)}>
                     <div className="weather_form_city">
                     <h2>{city}</h2>
                 <p onClick={()=>{
+                    console.log(v.description.search("Rain"))
                     setRotateDeg(!rotateDeg)
-                }} style={{cursor:"pointer",transform:`rotate(${rotateDeg?"270deg":"90deg"})`,transition:"0.25s",color:"white"}}>&#10142;</p>
+                }} style={{cursor:"pointer",transform:`rotate(${rotateDeg?"270deg":"90deg"})`,transition:"0.25s"}}>&#10142;</p>
                     </div>
                     <div className="change_options" style={{display:rotateDeg?"flex":"none"}}>
                     <input {...register("cityName")} />                

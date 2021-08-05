@@ -44,16 +44,16 @@
 .weather form input{
     border: none;
     background: none;
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid hsla(208, 100%, 75%, 1.0);
     outline: none;
     font-size:16px;
-    color:white;
+    color:hsla(208, 100%, 85%, 1.0);
 }
 .weather_today form button{    
     display: block;
     border: none;
-    background: #00008B;
-    color: white;
+    background:  #0074D9;
+    color: hsla(208, 100%, 85%, 1.0);
     width: 100px;
     height: 35px;
     border-radius: 5px;
